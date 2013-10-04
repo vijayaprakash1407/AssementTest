@@ -1,0 +1,19 @@
+<%=form_tag :action=>"save_questionnaire" do %>
+
+<table>
+	<%@questions.collect do |question|%>
+	
+	<tr>
+		<td><% =question.name%></td>>
+	</tr>
+	<tr>
+		<%question.options.collect{|option|%>
+		<td><%= radio_button_tag('answer', option.id )  %><%option.name%></td>
+		<%}%>
+	</tr>
+	</table>
+	
+	<%end%>
+	
+	<%submit_tag "Submit"%>
+	<%end%>

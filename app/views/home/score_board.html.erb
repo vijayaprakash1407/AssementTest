@@ -1,0 +1,16 @@
+
+Winner is:
+<%=@score_board.first.user.firstname  %>
+<br/>
+Score Board:
+<table>
+	<tr><td>User name</td><td>Points<td></tr>
+	<%@score_board.collect do |score|%>
+	<tr>
+		<td>
+			<%=score.user.firstname%>
+		</td>
+		<td><%=score.points%></td>
+	</tr>
+	<%end%>
+	</table>
